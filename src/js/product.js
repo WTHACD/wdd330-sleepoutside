@@ -4,13 +4,8 @@ import ProductData from "./ProductData.mjs";
 const dataSource = new ProductData("tents");
 
 function addProductToCart(product) {
-  // 1. Obtener el carrito actual (si no existe, usar arreglo vacío)
-  let cart = getLocalStorage("so-cart") || [];
-
-  // 2. Agregar el nuevo producto
-  cart.push(product);
-
-  // 3. Guardar el nuevo carrito completo
+  let cart = getLocalStorage("so-cart") || []; 
+  cart.push(product);  
   setLocalStorage("so-cart", cart);
 }
 
